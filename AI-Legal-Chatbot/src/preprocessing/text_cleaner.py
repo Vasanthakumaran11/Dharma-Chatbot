@@ -53,6 +53,14 @@ def clean_text(text):
         if re.fullmatch(r"(?:EXTRAORDINARY|PUBLISHED BY AUTHORITY|THE GAZETTE OF INDIA|भारत का राजपत्र|MINISTRY OF LAW AND JUSTICE|GOVERNMENT OF INDIA|LEGISLATIVE DEPARTMENT|NEW DELHI|REGISTERED NO\.|REGISTERED NO|NO\.[\s\d]+|PART II|SECTION 1|CG-DL(?:-E)?|DL-\(N\)|xxxGIDHxxx|xxxGIDExxx)", line, flags=re.IGNORECASE):
             continue
 
+        # Remove footer artifacts such as "Sec. 1]" and page-footers.
+        if re.fullmatch(r"(?:Sec\.|Section)\s*\d+\]?", line, flags=re.IGNORECASE):
+            continue
+        if re.fullmatch(r"\[Part\s+II[\s\-—\]]*", line, flags=re.IGNORECASE):
+            continue
+        if re.fullmatch(r"[_\-]{3,}", line):
+            continue
+
         # Remove lines that are clearly publication metadata.
         if re.match(r"^(?:[A-Z0-9\-\s]+)$", line) and any(
             token in line.upper()
