@@ -1,0 +1,35 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Local environment files
+.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project-generated artifacts
+AI-Legal-Chatbot/data/chunks/
+AI-Legal-Chatbot/data/cleaned_text/
+AI-Legal-Chatbot/data/embeddings/
+AI-Legal-Chatbot/data/metadata/
+AI-Legal-Chatbot/data/vector_db/
+
+# Logs
+*.log

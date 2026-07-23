@@ -1,0 +1,15 @@
+# Core ML / NLP
+sentence-transformers
+faiss-cpu
+numpy
+torch
+
+# API backend
+fastapi
+uvicorn[standard]
+httpx
+python-dotenv
+pydantic
+
+# Utilities
+pathlib
